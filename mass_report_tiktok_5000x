@@ -1,0 +1,26 @@
+import requests
+import time
+
+def report(username):
+    # Buat URL untuk report akun
+    url = "https://www.tiktok.com/report/user?username=" + username
+
+    # Kirim request POST ke URL
+    response = requests.post(url)
+
+    # Cek status response
+    if response.status_code == 200:
+        # Akun berhasil dilaporkan
+        print("Akun " + username + " berhasil dilaporkan.")
+    else:
+        # Akun gagal dilaporkan
+        print("Akun " + username + " gagal dilaporkan.")
+
+# Daftar username yang akan dilaporkan
+usernames = ["@wawasanelia", ...]
+
+# Mulai report akun
+for i in range(5000):
+    report(usernames[i % len(usernames)])
+    # Tunggu 1 detik sebelum report akun berikutnya
+    time.sleep(10)
