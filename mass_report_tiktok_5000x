@@ -16,11 +16,15 @@ def report(username):
         # Akun gagal dilaporkan
         print("Akun " + username + " gagal dilaporkan.")
 
-# Daftar username yang akan dilaporkan
-usernames = ["@wawasanelia", ...]
+def main():
+    # Daftar username yang akan dilaporkan
+    usernames = ["@wawasanelia", "@wawasanelia", "@wawasanelia", ...]
 
-# Mulai report akun
-for i in range(5000):
-    report(usernames[i % len(usernames)])
-    # Tunggu 1 detik sebelum report akun berikutnya
-    time.sleep(10)
+    # Mulai report akun
+    for i in range(5000):
+        report(usernames[i % len(usernames)])
+        # Tunggu 1 detik sebelum report akun berikutnya
+        time.sleep(10)
+
+if __name__ == "__main__":
+    main()
